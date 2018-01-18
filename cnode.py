@@ -13,7 +13,6 @@ class Register(unittest.TestCase):
         def test_regis(self):
             my_file='./data.csv'
             data=csv.reader(open(my_file,'r'))
-
             for i in data:
                 print(i[4])
                 username="loginname"
@@ -22,7 +21,6 @@ class Register(unittest.TestCase):
                 email="email"
                 click="span-primary"
                 info='//*[@id="content"]//strong'
-
                 self.driver.find_element_by_id(username).send_keys(i[0])
                 self.driver.find_element_by_id(pwd).send_keys(i[1])
                 self.driver.find_element_by_id(repwd).send_keys(i[2])
@@ -41,7 +39,6 @@ class Register(unittest.TestCase):
                     print('提示信息错误，预期值与实际值不符：')
                     print('预期提示:'+ i[6])
                     print('实际提示:'+ message)
-
                 self.driver.back()
                 self.driver.refresh()
 
